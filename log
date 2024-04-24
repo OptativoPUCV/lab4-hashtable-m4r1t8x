@@ -55,3 +55,19 @@ Wed 24 Apr 2024 09:00:54 PM UTC:
  tests:  5|4
 total_score: 30/70
 feb7e0b
+Wed 24 Apr 2024 09:02:47 PM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:103:51: error: expected ‘)’ before ‘{’ token
+  103 |       if(is_equal(map->buckets[posicion]->key,key)
+      |         ~                                         ^
+      |                                                   )
+  104 |       {
+      |       ~                                            
+hashmap.c:110:5: error: expected expression before ‘}’ token
+  110 |     }
+      |     ^
+Compilation failed
+0426948
