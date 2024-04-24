@@ -85,6 +85,7 @@ void enlarge(HashMap * map) {
         free(aux[i]);
       }
     }
+  free(aux);
 }
 
 
