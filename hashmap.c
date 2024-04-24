@@ -94,23 +94,37 @@ HashMap * createMap(long capacity)
   return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
-
+void eraseMap(HashMap * map,  char * key) 
+{
+  if(map == NULL || map->size == 0) return;
+  long posicion = hash(key,map->capacity);
+  while(map->buckets[posicion] != NULL)
+    {
+      if(is_equal(map->buckets[posicion]->key,key))
+      {
+        map->buckets[posicion] = NULL;
+        map->size--;
+        return;
+      }
+      posicion = (posicion + 1) % map->capacity;
+    }
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map,  char * key) 
+{   
 
 
     return NULL;
 }
 
-Pair * firstMap(HashMap * map) {
+Pair * firstMap(HashMap * map) 
+{
 
     return NULL;
 }
 
-Pair * nextMap(HashMap * map) {
+Pair * nextMap(HashMap * map)
+{
 
     return NULL;
 }
