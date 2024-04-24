@@ -150,6 +150,22 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map)
 {
-
-    return NULL;
+  if(map == NULL) return NULL;
+  if(map->buckets[map->current + 1] != NULL && map->buckets[map->current + 1]->key != NULL)
+  {
+    map->current++;
+    return map->buckets[map->current];
+  }
+  else
+  {
+    for(int i = map->current + 2; i < map->capacity; i++)
+      {
+        if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
+        {
+          map->current = i;
+          return map->buckets[i];
+        }
+      }
+  }
+  return NULL;
 }
