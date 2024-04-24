@@ -2,3 +2,14 @@ Wed 24 Apr 2024 07:53:58 PM UTC:
  tests:  0|6
 total_score: 0/70
 9c4bd6d
+Wed 24 Apr 2024 08:06:54 PM UTC: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:43:10: error: unused variable ‘mapa’ [-Werror=unused-variable]
+   43 | HashMap* mapa = (HashMap *) map;
+      |          ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ec69989
